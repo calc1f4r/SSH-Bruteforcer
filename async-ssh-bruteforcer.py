@@ -4,7 +4,6 @@ import argparse
 
 from termcolor import colored
 from datetime import datetime
-from termcolor import colored
 from os import path
 from sys import exit
 
@@ -27,7 +26,7 @@ def get_args():
 async def ssh_bruteforce(hostname, username, password, port, found_flag):
     """Takes password,username,port as input and checks for connection"""
     try:
-        async with asyncssh.connect(host=hostname, username=username, password=password,port=port) as conn:
+        async with asyncssh.connect(hostname, username=username, password=password) as conn:
             found_flag.set()
             print(colored(
                 f"[{port}] [ssh] host:{hostname}  login:{username}  password:{password}", 'green'))

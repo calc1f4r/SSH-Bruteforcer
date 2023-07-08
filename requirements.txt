@@ -2,3 +2,4 @@ asyncssh
 asyncio
 termcolor
 argparse
+paramiko
